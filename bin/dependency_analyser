@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require_relative '../lib/dependency_analyser'
+include DependencyAnalyser
+if ARGV.empty?
+  DependencyAnalyser::CLI.start(%w[usage])
+else
+  DependencyAnalyser::CLI.start(%w[execute].concat(ARGV))
+end
